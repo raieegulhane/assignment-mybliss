@@ -1,26 +1,26 @@
 import { useState } from 'react';
 import { Header, ProductList } from './components';
 import './css/styles.css';
+import Products from './products.json';
+import { sortByColorFunction, sortByInStockFunction } from './helper-functions';
+
 
 const App = () => {
-  const [filter, setFilter] = useState('');
-  const [filterColor, setFilterColor] = useState('ALL');
+  const [sort, setSort] = useState({inStock: false, color: 'ALL'});
 
-  const setFilterFunction = (filter) => {
-    setFilter(filter);
-  }
-
-  const setFilterColorFunction = (event) => {
-    setFilterColor(event.target.value)
-  }
+  const sortedByColor = sortByColorFunction(sort, Products);
+  const sortedProducts = sortByInStockFunction(sort, sortedByColor)
 
   return (
     <div className='App u_fx-col u_fx-al-cn'>
       <Header
-        setFilterFunction={setFilterFunction}
-        setFilterColorFunction={setFilterColorFunction}
+        allProducts={sortedProducts}
+        sortBy={sort}
+        setFilterInStockFunction={() => setSort({ ...sort, inStock: true})}
+        setFilterColorFunction={(e) => setSort({ ...sort, color: e.target.value })}
+        clearFilterFunction={() => setSort({ inStock: false, color: 'ALL'})}
       />
-      <ProductList />
+      <ProductList products={sortedProducts}/>
     </div>
   );
 }
