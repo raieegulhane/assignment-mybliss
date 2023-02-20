@@ -1,0 +1,38 @@
+/* font */
+.u_txt-sm {
+    font-size: 0.75rem;    
+}
+
+.u_txt-grey {
+    color: var(--grey);
+}
+
+/* .flex */
+.u_fx-col,
+.u_fx-row {
+    display: flex;
+}
+
+.u_fx-col {
+    flex-direction: column;
+}
+
+.u_fx-row {
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.u_fx-js-cn {
+    justify-content: center;
+}
+
+.u_fx-al-cn {
+    align-items: center;
+}
+
+/* hover effect */ 
+.u_pop:hover {
+    transform: scale(1.05);
+    z-index: 2;
+}
+
