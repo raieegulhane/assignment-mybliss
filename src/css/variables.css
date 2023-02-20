@@ -1,0 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Abel&display=swap');
+
+:root {
+    /* fonts */
+    --font: 'Abel', 'Oswald', sans-serif;
+
+    /* color */
+    --background: #fff2f1;
+    --background2: #f7f7f7;
+    --primary: #cf7068;
+    --white: #fff;
+    --black: #302f2f;
+    --grey: #9f9f9f;
+}
