@@ -1,0 +1,41 @@
+.header-wr {
+    min-width: 90%;
+    margin: 0 1rem 1.5rem;
+}
+
+.header-txt {
+    gap: 0.5rem;
+}
+
+.header-txt p {
+    color: var(--grey);
+}
+
+.header-filters {
+    margin-left: auto;
+    gap: 1rem;
+}
+
+.header-filters h3 {
+    font-size: 1rem;
+}
+
+.header-filters div {
+    gap: 0.25rem;
+}
+
+.header-filters button {
+    font-family: var(--font);
+    font-size: 1rem;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+
+.header-filters button:nth-of-type(1) {
+    font-weight: bold;
+}
+
+.header-filters button:nth-of-type(2) {
+    text-decoration: underline;
+}
