@@ -9,8 +9,8 @@ export const Header = ({ sortBy, allProducts, setFilterColorFunction, setFilterI
                 <p>Use these beads for jewellery making, embroidery, accessories, dreamcatchers, home decore, macarme and other art and craft projects.</p>
             </section>
 
-            <section className='header-filters u_fx-col'>
-                <div className='u_fx-row'>
+            <section className='header-filters-wr u_fx-col'>
+                <div className='header-filters u_fx-row'>
                     <h3>SORT BY:</h3>
                     <div className='u_fx-row'>
                         <h4>Shades:</h4>
@@ -27,12 +27,12 @@ export const Header = ({ sortBy, allProducts, setFilterColorFunction, setFilterI
                                 <option value='OTHER'>Other</option>
                             </select>
                         </label>
-                    </div>
-                    <button className='u_pop' onClick={setFilterInStockFunction}>In Stock</button>
+                    </div>{" "}|{" "}
+                    <button className='u_pop' onClick={setFilterInStockFunction}>In Stock</button>{" "}|{" "}
                     <button className='u_pop' onClick={clearFilterFunction}>Clear filters</button>    
                 </div>
                 <p className='u_txt-grey'>Nuber of products: {allProducts.length}</p>
-                <p className='u_txt-grey'>Sorted by: {sortBy.inStock && "In stock,"} {sortBy.color !== "ALL" && `Shade - ${sortBy.color}`}</p>
+                <p className='u_txt-grey'>Sorted by: {`Shade - ${sortBy.color}`} {sortBy.inStock && ", In stock,"} </p>
             </section>
         </header>
     );

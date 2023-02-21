@@ -11,10 +11,14 @@
     color: var(--grey);
 }
 
-.header-filters {
-    padding: 0.5rem 0 0 2rem;
+.header-filters-wr {
+    padding-left: 2rem;
     margin-left: auto;
-    gap: 1rem;
+    gap: 0.5rem;
+}
+
+.header-filters {
+    gap: 0.5rem;
 }
 
 .header-filters h3 {

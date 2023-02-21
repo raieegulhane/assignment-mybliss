@@ -14,7 +14,6 @@ export const refresherFunction = (productList) => {
     const { sortedByColor, sortedByInStock } = productListSorterFunction(productList);
 
     for (let i = 0; i < sortedByColor.length; i++) {
-        console.log(sortedByColor[i]);
         shufflerFunction(sortedByColor[i])
     }
 
