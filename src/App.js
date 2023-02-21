@@ -1,15 +1,25 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Header, ProductList } from './components';
-import './css/styles.css';
 import Products from './products.json';
 import { sortByColorFunction, sortByInStockFunction } from './helper-functions';
+import { refresherFunction } from './helper-functions/refresher';
+import './css/styles.css';
 
 
 const App = () => {
-  const [sort, setSort] = useState({inStock: false, color: 'ALL'});
+  const [productList, setProductList] = useState(Products);
+  const [sort, setSort] = useState({color: 'ALL', inStock: false });
 
-  const sortedByColor = sortByColorFunction(sort, Products);
-  const sortedProducts = sortByInStockFunction(sort, sortedByColor)
+  const sortedByColor = sortByColorFunction(sort.color, productList);
+  const sortedProducts = sortByInStockFunction(sort.inStock, sortedByColor);
+
+  useEffect(() => {
+    if (window.performance.getEntriesByType("navigation")[0].type === "reload") {
+      let refreshedProductList = refresherFunction(productList);
+      setProductList(refreshedProductList);
+    }
+
+  }, [])
 
   return (
     <div className='App u_fx-col u_fx-al-cn'>
