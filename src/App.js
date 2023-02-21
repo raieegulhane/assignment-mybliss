@@ -1,10 +1,8 @@
 import { useEffect, useState } from 'react';
 import { Header, ProductList } from './components';
+import { sortByColorFunction, sortByInStockFunction, refresherFunction } from './helper-functions';
 import Products from './products.json';
-import { sortByColorFunction, sortByInStockFunction } from './helper-functions';
-import { refresherFunction } from './helper-functions/refresher';
 import './css/styles.css';
-
 
 const App = () => {
   const [productList, setProductList] = useState(Products);
@@ -18,7 +16,6 @@ const App = () => {
       let refreshedProductList = refresherFunction(productList);
       setProductList(refreshedProductList);
     }
-
   }, [])
 
   return (

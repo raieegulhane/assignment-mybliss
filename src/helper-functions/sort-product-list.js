@@ -1,6 +1,5 @@
 import cloneDeep from "lodash.clonedeep";
-import { sortByColorFunction } from "./sort-color";
-import { sortByInStockFunction } from "./sort-in-stock";
+import { sortByColorFunction, sortByInStockFunction } from ".";
 
 const colorList = ["BLUE", "PINK", "PURPLE", "ORANGE", "GREEN", "YELLOW", "WHITE", "OTHER"];
 

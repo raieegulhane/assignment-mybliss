@@ -1,4 +1,3 @@
-import Products from '../../products.json';
 import { ProductCard } from '../product-card';
 
 export const ProductList = ({ products }) => {

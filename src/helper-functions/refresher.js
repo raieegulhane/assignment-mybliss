@@ -1,5 +1,5 @@
 import cloneDeep from "lodash.clonedeep";
-import { sorterFunction } from "./sort-product-list"
+import { productListSorterFunction } from "."
 
 const shufflerFunction = (array) => {
     for (let i = 0; i < array.length; i++) {
@@ -11,7 +11,7 @@ const shufflerFunction = (array) => {
 }
 
 export const refresherFunction = (productList) => {
-    const { sortedByColor, sortedByInStock } = sorterFunction(productList);
+    const { sortedByColor, sortedByInStock } = productListSorterFunction(productList);
 
     for (let i = 0; i < sortedByColor.length; i++) {
         console.log(sortedByColor[i]);
