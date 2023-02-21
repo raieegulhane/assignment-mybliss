@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useLayoutEffect, useState } from 'react';
 import { Header, ProductList } from './components';
 import { sortByColorFunction, sortByInStockFunction, refresherFunction } from './helper-functions';
 import Products from './products.json';
@@ -11,7 +11,7 @@ const App = () => {
   const sortedByColor = sortByColorFunction(sort.color, productList);
   const sortedProducts = sortByInStockFunction(sort.inStock, sortedByColor);
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     if (window.performance.getEntriesByType("navigation")[0].type === "reload") {
       let refreshedProductList = refresherFunction(productList);
       setProductList(refreshedProductList);
